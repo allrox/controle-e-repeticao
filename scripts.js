@@ -49,7 +49,7 @@ function exampleIfElse() {
     if (number > value) {
         result = "O número " + number + " é maior que " + value + ".";
     } else {
-        result = "O número " + number + " é menor ou igual a " + value + ".";
+        result = "O número " + number + " não é maior que " + value + ".";
     }
     document.getElementById("ifElseResult").innerText = result;
 }
