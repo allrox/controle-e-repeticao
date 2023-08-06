@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alexandre Rocha, @AllRox">
+    <meta name="description" content="Exemplos de estruturas de controle e repetição">
+    <meta name="keywords" content="Lógica de programação, estruturas de controle, estruturas de repetição, for, while, switch case, if, else if">
+    <title>Laços e Condicionais em JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="body">
+    <div class="container">
+        <button onclick="toggleDarkMode()" class="btn btn-secondary mt-4" id="darkModeButton">Modo Claro</button>
+        <h1 class="my-5">Laços e Condicionais em JavaScript</h1>
+
+        <!-- Exemplo de Condicional -->
+        <div class="example mb-5">
+            <h2>Condicional (if, else)</h2>
+            <p>Este exemplo verifica se um número é maior que outro. Você pode inserir um número e um valor para
+                comparar.</p>
+            <pre><code>if (número > valor) {
+              resultado = "O número é maior.";
+          } else {
+              resultado = "O número é menor ou igual.";
+          }</code></pre>
+            <input type="number" size="15" id="ifElseNumber" placeholder="Número">
+            <input type="number" size="15" id="ifElseValue" placeholder="Valor para comparar">
+            <button onclick="exampleIfElse()" class="btn-lg btn-primary">Executar Exemplo</button>
+            <p id="ifElseResult"></p>
+        </div>
+
+        <!-- Exemplo de Condicional com Else If -->
+        <div class="example mb-5">
+            <h2>Condicional (if, else if, else)</h2>
+            <p>Em lógica de programação, uma estrutura condicional permite que diferentes blocos de código sejam
+                executados dependendo de uma condição. O exemplo abaixo verifica se um número é positivo, negativo ou
+                zero. A instrução <code>if</code> verifica a primeira condição (se o número é maior que zero), a
+                instrução <code>else if</code> verifica a segunda condição (se o número é menor que zero), e a instrução
+                <code>else</code> é executada se nenhuma das condições anteriores for verdadeira (ou seja, o número é
+                zero).
+            </p>
+
+            <pre><code>if (número > 0) {
+          resultado = "positivo";
+      } else if (número < 0) {
+          resultado = "negativo";
+      } else {
+          resultado = "zero";
+      }</code></pre>
+            <form onsubmit="exampleElseIf(); return false;">
+                <input type="number" id="elseIfNumber" placeholder="Número">
+                <button type="submit" class="btn-lg btn-primary">Executar Exemplo</button>
+            </form>
+            <p id="elseIfResult"></p>
+        </div>
+
+        <!-- Exemplo de Laço For -->
+        <div class="example mb-5">
+            <h2>Laço For</h2>
+            <p>O laço <code>for</code> é uma estrutura de repetição que permite que um bloco de código seja executado
+                várias vezes. É comumente usado quando o número de repetições é conhecido. No exemplo abaixo, o laço
+                <code>for</code> conta de 1 até o número que você escolher. A variável <code>i</code> é inicializada com
+                1, e o laço continua enquanto <code>i</code> for menor ou igual ao número inserido, incrementando
+                <code>i</code> a cada repetição.
+            </p>
+
+            <pre><code>for (var i = 1; i <= número; i++) {
+      resultado += i + " ";
+  }</code></pre>
+            <form onsubmit="exampleForLoop(); return false;">
+                <input type="number" min="0" id="forLoopNumber" placeholder="Número">
+                <button type="submit" class="btn-lg btn-primary">Executar Exemplo</button>
+            </form>
+            <p id="forLoopResult"></p>
+        </div>
+
+        <!-- Exemplo de Laço While -->
+        <div class="example mb-5">
+            <h2>Laço While</h2>
+            <p>O laço <code>while</code> é outra estrutura de repetição que executa um bloco de código enquanto uma
+                condição for verdadeira. É comumente usado quando o número de repetições não é conhecido
+                antecipadamente. No exemplo abaixo, o laço <code>while</code> conta de um número que você escolher até
+                1. A condição verifica se <code>i</code> é maior que 0, e o laço continua enquanto essa condição for
+                verdadeira, decrementando <code>i</code> a cada repetição.</p>
+
+            <pre><code>var i = número;
+        while (i > 0) {
+          resultado += i + " ";
+          i--;
+      }</code></pre>
+            <form onsubmit="exampleWhileLoop(); return false;">
+                <input type="number" id="whileLoopNumber" placeholder="Número">
+                <button type="submit" class="btn-lg btn-primary">Executar Exemplo</button>
+            </form>
+            <p id="whileLoopResult"></p>
+        </div>
+
+        <!-- Exemplo de Switch Case -->
+        <div class="example mb-5">
+            <h2>Switch Case</h2>
+            <p>O <code>switch</code> é uma estrutura de controle que permite que um bloco de código seja executado de
+                várias maneiras diferentes, dependendo do valor de uma expressão. É uma alternativa mais limpa e
+                eficiente para uma série de instruções <code>if</code> <code>else if</code> quando você precisa comparar
+                uma variável com vários valores literais. No exemplo abaixo, o valor inserido é comparado com números de
+                1 a 7, representando os dias da semana. Se o valor inserido não corresponder a nenhum dos casos, o bloco
+                <code>default</code> é executado, retornando "Número inválido".
+            </p>
+
+            <pre><code>switch (número) {
+      case 1: resultado = "Domingo"; break;
+      case 2: resultado = "Segunda-feira"; break;
+      // ...
+      default: resultado = "Número inválido";
+  }</code></pre>
+            <form onsubmit="exampleSwitch(); return false;">
+                <input type="number" id="switchNumber" placeholder="Número (1-7)">
+                <button type="submit" class="btn-lg btn-primary">Executar Exemplo</button>
+            </form>
+            <p id="switchResult"></p>
+        </div>
+    </div>
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
