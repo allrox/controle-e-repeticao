@@ -43,13 +43,13 @@ function exampleSwitch() {
 
 // Exemplo de Condicional
 function exampleIfElse() {
-    var number = document.getElementById("ifElseNumber").value;
-    var value = document.getElementById("ifElseValue").value;
+    var x = parseInt(document.getElementById("numX").value);
+    var y = parseInt(document.getElementById("numY").value);
     var result;
-    if (number > value) {
-        result = "O número " + number + " é maior que " + value + ".";
+    if (x > y) {
+        result = "O número " + x + " é maior que " + y + ".";
     } else {
-        result = "O número " + number + " não é maior que " + value + ".";
+        result = "O número " + x + " não é maior que " + y + ".";
     }
     document.getElementById("ifElseResult").innerText = result;
 }
